@@ -1,6 +1,12 @@
 import json
 import pandas as pd
 
+bucket='kaph-raw/nyc-taxi-trips'
+data_key = 'trips-2009-raw.json'
+data_location = 's3://{}/{}'.format(bucket, data_key)
+
+pd.read_json(data_location)
+
 data = []
 
 def no_default(dct):
